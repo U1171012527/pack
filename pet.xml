@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>pet</name>
+    </assembly>
+    <members>
+        <member name="M:pet.Controllers.GoodController.#ctor(pet.Interface.IGoodService)">
+            <summary>
+            
+            </summary>
+            <param name="goodService"></param>
+        </member>
+        <member name="M:pet.Controllers.GoodController.GetGoods">
+            <summary>
+            获取所有的商品
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:pet.Controllers.GoodController.GetByType(pet.Enum.GoodType)">
+            <summary>
+            通过类型获取商品(1:喝的，2：吃的，3：玩的) 
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:pet.Controllers.GoodController.Addone(pet.Entity.Goods)">
+            <summary>
+            创建商品 GoodType (1:喝的，2：吃的，3：玩的),num是用了之后增加多少数值，price是价格
+            </summary>
+            <param name="goods"></param>
+            <returns></returns>
+        </member>
+        <member name="M:pet.Controllers.KindController.GetAll">
+            <summary>
+            获取所有宠物种类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:pet.Controllers.KindController.Addone(pet.Entity.Kinds)">
+            <summary>
+            添加个宠物种类
+            </summary>
+            <param name="kinds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:pet.Controllers.OperationController.DoOperation(System.Int32,System.Int32,pet.Enum.OperationType,System.Int32)">
+            <summary>
+            执行各种操作，吃饭(1)，洗澡(2)，游戏（3）打针（6），上厕所（4），喝水（5）如果不传goodid默认为0，传了goodid会增加对应的点数
+            </summary>
+            <param name="userId"></param>
+            <param name="petId"></param>
+            <param name="operationType"></param>
+            <param name="goodId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:pet.Controllers.OrderController.Create(pet.Entity.Order)">
+            <summary>
+            创建订单只要userid，goodid，count
+            </summary>
+            <param name="order"></param>
+            <returns></returns>
+        </member>
+        <member name="M:pet.Controllers.OrderController.GetBuied(System.Int32)">
+            <summary>
+            获取用户已购买的商品
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:pet.Controllers.OrderController.GetDetail(System.Int32,System.Int32)">
+            <summary>
+            获取一种商品购买情况
+            </summary>
+            <param name="userId"></param>
+            <param name="goodId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:pet.Controllers.PetController.Getstatus(System.Int32)">
+            <summary>
+            通过用户id获取宠物状态
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:pet.Controllers.PetController.GetAll">
+            <summary>
+            获取所有宠物带用户信息（你应该只用宠物id,姓名，用户id，姓名）1，健康，2生病
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:pet.Controllers.PetController.Create(pet.Entity.Pet)">
+            <summary>
+            创建宠物，需要userid，宠物姓名，种类，性别，
+            </summary>
+            <param name="pet"></param>
+            <returns></returns>
+        </member>
+        <member name="M:pet.Controllers.ScoreController.AddScore(pet.Entity.Score)">
+            <summary>
+            添加分数只要userid，price
+            </summary>
+            <param name="score"></param>
+            <returns></returns>
+        </member>
+        <member name="M:pet.Controllers.UserController.GetAll">
+            <summary>
+            获取全部用户
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:pet.Controllers.UserController.Cheack(System.String)">
+            <summary>
+            获取用户
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:pet.Controllers.UserController.Login(pet.Entity.User)">
+            <summary>
+            登录，只要传手机号和密码
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:pet.Controllers.UserController.SignIn(pet.Entity.User)">
+            <summary>
+            注册，需要手机号，姓名，密码
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="T:pet.Dto.ApiResult">
+            <summary>
+                接口结果基类型 
+            </summary>
+        </member>
+        <member name="M:pet.Dto.ApiResult.#ctor(System.Int32,System.String)">
+            <summary>
+                构造函数 
+            </summary>
+        </member>
+        <member name="P:pet.Dto.ApiResult.IsSuccess">
+            <summary>
+                接口执行成功标识
+                <c>true</c>:执行成功
+            </summary>
+        </member>
+        <member name="P:pet.Dto.ApiResult.ErrorCode">
+            <summary>
+                错误代码
+            </summary>
+        </member>
+        <member name="P:pet.Dto.ApiResult.Message">
+            <summary>
+                错误信息
+            </summary>
+        </member>
+        <member name="M:pet.Dto.ApiResult.SetSuccess">
+            <summary>
+                设置成功状态
+            </summary>
+        </member>
+        <member name="M:pet.Dto.ApiResult.SetFailed(System.Int32)">
+            <summary>
+                设置失败状态
+            </summary>
+            <param name="errorCode">错误编号</param>
+        </member>
+        <member name="M:pet.Dto.ApiResult.SetFailed(System.String)">
+            <summary>
+                设置失败消息
+            </summary>
+        </member>
+        <member name="M:pet.Dto.ApiResult.SetFailed(System.Int32,System.String)">
+            <summary>
+                设置失败消息
+            </summary>
+            <param name="errorCode">错误编号</param>
+            <param name="msg">错误内容</param>
+        </member>
+        <member name="M:pet.Dto.ApiResult.ToString">
+            <summary>
+                重写tostring
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:pet.Dto.ApiResult`1">
+            <summary>
+                统一函数返回值
+            </summary>
+            <typeparam name="TResult"></typeparam>
+        </member>
+        <member name="M:pet.Dto.ApiResult`1.#ctor(System.Int32,System.String,`0)">
+            <summary>
+                构造函数
+            </summary>
+        </member>
+        <member name="P:pet.Dto.ApiResult`1.Result">
+            <summary>
+                扩展数据
+            </summary>
+        </member>
+        <member name="M:pet.Dto.ApiResult`1.SetSuccess(`0)">
+            <summary>
+                设置返回数据
+            </summary>
+        </member>
+        <member name="M:pet.Dto.ApiResult`1.SetApiResult(`0)">
+            <summary>
+                设置返回数据
+            </summary>
+        </member>
+        <member name="F:pet.Enum.PetStatus.Good">
+            <summary>
+            健康
+            </summary>
+        </member>
+        <member name="F:pet.Enum.PetStatus.Bad">
+            <summary>
+            生病
+            </summary>
+        </member>
+        <member name="F:pet.MySQLDataBaseConfig.DefaultMySqlConnectionString">
+            <summary>
+            默认的MySQL的链接字符串
+            </summary>
+        </member>
+    </members>
+</doc>
